@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Railways Game</title>
+    <link rel="icon" href="pics/train.png" type="image/png" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="data.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="menu-screen">
+      <h1 id="title">RAILWAYS</h1>
+
+      <div class="player-name">
+        <input type="text" id="playerName" placeholder="WHO ARE YOU?" />
+      </div>
+
+      <div class="difficulty-and-buttons">
+        <div class="difficulty-container">
+          <p id="difficultyPrompt">SET THE DIFFICULTY!</p>
+          <div class="difficulty">
+            <div class="difficulty-box">
+              <button class="difficulty-button" id="easy" data-size="5">
+                5 x 5
+              </button>
+              <p class="difficulty-label">EASY</p>
+            </div>
+            <div class="difficulty-box">
+              <button class="difficulty-button" id="hard" data-size="7">
+                7 x 7
+              </button>
+              <p class="difficulty-label">HARD</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="action-buttons">
+          <button id="rulesButton">RULES</button>
+          <button id="startButton" disabled>START GAME</button>
+        </div>
+      </div>
+
+      <div id="rules-modal" class="rules-modal">
+        <div class="rules-modal-content">
+          <span id="rules-close">&times;</span>
+          <h2>Game Rules</h2>
+          <p>
+            The game ends when the player correctly completes the puzzle
+            according to the given rules.
+            KEEP IN MIND ON RESET BUTTON ALSO LEADERBOARD RESETS!
+            <br />
+            <br />
+            • Each cell has two exit points, and the train can enter each
+            neighboring cell from the correct direction.
+            <br />
+            <br />
+            • Every cell that needs to be touched is touched.
+            <br />
+            <br />
+            • Every cell where no track can be placed remains empty.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="game-screen">
+      <div class="game-info">
+        <h1 id="game-title">RAILWAYS</h1>
+        <div class="designer-info">
+          <p class="designer-label">ROUTE DESIGNER:</p>
+          <p id="displayPlayerName" class="designer-name"></p>
+          <hr />
+          <p class="time-label">ELAPSED TIME:</p>
+          <p id="elapsedTime" class="elapsed-time">00:00</p>
+        </div>
+        <div class="rail-container" id="railContainer"></div>
+        <button id="backButton">Back to Menu</button>
+        <button id="resetButton">Reset Button</button>
+        <!-- Leaderboard Button on Game Screen -->
+          <button id="openLeaderboardBtn">😎</button>
+
+      </div>
+
+      <!-- Leaderboard Modal -->
+      <div id="leaderModal" class="leader-modal">
+        <div class="leader-modal-content">
+          <span class="close-btn" id="closeModal">&times;</span>
+          <h2>Leaderboard</h2>
+          <div id="leaderboardContent"></div>
+          <button id="restartGame">Play Again</button>
+        </div>
+      </div>
+
+      <div id="modal" class="modal">
+        <div class="modal-content">
+          <span id="modal-close" class="close">&times;</span>
+          <p id="modal-message"></p>
+        </div>
+      </div>
+
+      <div class="game-map" id="gameMap"></div>
+    </div>
+  </body>
+</html>
